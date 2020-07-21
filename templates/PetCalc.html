@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form class="col-md-6 col-lg-8 col-xs-offset-3" action="" method="post">
+        <div class="input-group">
+            <span class="input-group-addon">Username</span>
+            <input type="text" class="form-control" name="username" value="{{ username }}">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-warning" name="btn" value="Login">
+                    Autofill
+                </button>
+            </div>
+        </div>
+    </form>
+    {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+</div>
+
+
+<h1 align="center">Skills XP</h1>
+<form action="" method="post">
+    <div class="row">
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Woodcutting</span>
+                <input type="number" class="form-control" name="Woodcutting" value="{{ Woodcutting }}">
+                <span class="input-group-addon">{{ Woodcutting_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Fishing</span>
+                <input type="number" class="form-control" name="Fishing" value="{{ Fishing }}">
+                <span class="input-group-addon">{{ Fishing_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Mining</span>
+                <input type="number" class="form-control" name="Mining" value="{{ Mining }}">
+                <span class="input-group-addon">{{ Mining_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Agility</span>
+                <input type="number" class="form-control" name="Agility" value="{{ Agility }}">
+                <span class="input-group-addon">{{ Agility_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Thieving</span>
+                <input type="number" class="form-control" name="Thieving" value="{{ Thieving }}">
+                <span class="input-group-addon">{{ Thieving_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Farming</span>
+                <input type="number" class="form-control" name="Farming" value="{{ Farming }}">
+                <span class="input-group-addon">{{ Farming_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Runecraft</span>
+                <input type="number" class="form-control" name="Runecraft" value="{{ Runecraft }}">
+                <span class="input-group-addon">{{ Runecraft_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Hunter</span>
+                <input type="number" class="form-control" name="Hunter" value="{{ Hunter }}">
+                <span class="input-group-addon">{{ Hunter_output }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6 col-md-4 col-lg-3 col-xs-offset-5">
+            <div class="input-group">
+                <p>Hunter - % of xp spent catching chinchompas (After 53)</p>
+                <div class="slidecontainer">
+                    <input type="range" class="form-control" name="huntperc" min="0" max="100" value="50" class="slider" id="myRange">
+                    <p class="col-xs-offset-5">Value: <span id="huntperc"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <h1 align="center" class="row">Boss KC</h1>
+    </ul>
+    <div class="row">
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Abyssal Sire</span>
+                <input type="number" class="form-control" name="Abyssal_Sire" value="{{ Abyssal_Sire }}">
+                <span class="input-group-addon">{{ Abyssal_Sire_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Alchemical Hydra</span>
+                <input type="number" class="form-control" name="Alchemical_Hydra" value="{{ Alchemical_Hydra }}">
+                <span class="input-group-addon">{{ Alchemical_Hydra_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Callisto</span>
+                <input type="number" class="form-control" name="Callisto" value="{{ Callisto }}">
+                <span class="input-group-addon">{{ Callisto_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Cerberus</span>
+                <input type="number" class="form-control" name="Cerberus" value="{{ Cerberus }}">
+                <span class="input-group-addon">{{ Cerberus_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">CoX</span>
+                <input type="number" class="form-control" name="Chambers_of_Xeric" value="{{ Chambers_of_Xeric }}">
+                <span class="input-group-addon">{{ Chambers_of_Xeric_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">CoX: Challenge</span>
+                <input type="number" class="form-control" name="Chambers_of_Xeric_Challenge_Mode" value="{{ Chambers_of_Xeric_Challenge_Mode }}">
+                <span class="input-group-addon">{{ Chambers_of_Xeric_Challenge_Mode_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Chaos Ele</span>
+                <input type="number" class="form-control" name="Chaos_Elemental" value="{{ Chaos_Elemental }}">
+                <span class="input-group-addon">{{ Chaos_Elemental_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Chaos Fanatic</span>
+                <input type="number" class="form-control" name="Chaos_Fanatic" value="{{ Chaos_Fanatic }}">
+                <span class="input-group-addon">{{ Chaos_Fanatic_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Zilyana</span>
+                <input type="number" class="form-control" name="Commander_Zilyana" value="{{ Commander_Zilyana }}">
+                <span class="input-group-addon">{{ Commander_Zilyana_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Corp Beast</span>
+                <input type="number" class="form-control" name="Corporeal_Beast" value="{{ Corporeal_Beast }}">
+                <span class="input-group-addon">{{ Corporeal_Beast_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Dag Prime</span>
+                <input type="number" class="form-control" name="Dagannoth_Prime" value="{{ Dagannoth_Prime }}">
+                <span class="input-group-addon">{{ Dagannoth_Prime_output }}</span>
+            </div>
+        </div><div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Dag Rex</span>
+                <input type="number" class="form-control" name="Dagannoth_Rex" value="{{ Dagannoth_Rex }}">
+                <span class="input-group-addon">{{ Dagannoth_Rex_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Dag Supreme</span>
+                <input type="number" class="form-control" name="Dagannoth_Supreme" value="{{ Dagannoth_Supreme }}">
+                <span class="input-group-addon">{{ Dagannoth_Supreme_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Graardor</span>
+                <input type="number" class="form-control" name="General_Graardor" value="{{ General_Graardor }}">
+                <span class="input-group-addon">{{ General_Graardor_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Giant Mole</span>
+                <input type="number" class="form-control" name="Giant_Mole" value="{{ Giant_Mole }}">
+                <span class="input-group-addon">{{ Giant_Mole_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Guardians</span>
+                <input type="number" class="form-control" name="Grotesque_Guardians" value="{{ Grotesque_Guardians }}">
+                <span class="input-group-addon">{{ Grotesque_Guardians_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Kalphite Queen</span>
+                <input type="number" class="form-control" name="Kalphite_Queen" value="{{ Kalphite_Queen }}">
+                <span class="input-group-addon">{{ Kalphite_Queen_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">KBD</span>
+                <input type="number" class="form-control" name="King_Black_Dragon" value="{{ King_Black_Dragon }}">
+                <span class="input-group-addon">{{ King_Black_Dragon_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Kree'Arra</span>
+                <input type="number" class="form-control" name="Kree" value="{{ Kree }}">
+                <span class="input-group-addon">{{ Kree_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">K'ril Tsutsaroth</span>
+                <input type="number" class="form-control" name="Tsutsaroth" value="{{ Tsutsaroth }}">
+                <span class="input-group-addon">{{ Tsutsaroth_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Nightmare</span>
+                <input type="number" class="form-control" name="Nightmare" value="{{ Nightmare }}">
+                <span class="input-group-addon">{{ Nightmare_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Sarachnis</span>
+                <input type="number" class="form-control" name="Sarachnis" value="{{ Sarachnis }}">
+                <span class="input-group-addon">{{ Sarachnis_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Scorpia</span>
+                <input type="number" class="form-control" name="Scorpia" value="{{ Scorpia }}">
+                <span class="input-group-addon">{{ Scorpia_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Skotizo</span>
+                <input type="number" class="form-control" name="Skotizo" value="{{ Skotizo }}">
+                <span class="input-group-addon">{{ Skotizo_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Gauntlet</span>
+                <input type="number" class="form-control" name="The_Gauntlet" value="{{ The_Gauntlet }}">
+                <span class="input-group-addon">{{ The_Gauntlet_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Corrupted Gauntlet</span>
+                <input type="number" class="form-control" name="The_Corrupted_Gauntlet" value="{{ The_Corrupted_Gauntlet }}">
+                <span class="input-group-addon">{{ The_Corrupted_Gauntlet_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">ToB</span>
+                <input type="number" class="form-control" name="Theatre_of_Blood" value="{{ Theatre_of_Blood }}">
+                <span class="input-group-addon">{{ Theatre_of_Blood_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Thermonuclear SD</span>
+                <input type="number" class="form-control" name="Thermonuclear_Smoke_Devil" value="{{ Thermonuclear_Smoke_Devil }}">
+                <span class="input-group-addon">{{ Thermonuclear_Smoke_Devil_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">TzKal-Zuk</span>
+                <input type="number" class="form-control" name="Zuk" value="{{ Zuk }}">
+                <span class="input-group-addon">{{ Zuk_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">TzTok-Jad</span>
+                <input type="number" class="form-control" name="Jad" value="{{ Jad }}">
+                <span class="input-group-addon">{{ Jad_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Venenatis</span>
+                <input type="number" class="form-control" name="Venenatis" value="{{ Venenatis }}">
+                <span class="input-group-addon">{{ Venenatis_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Vet'ion</span>
+                <input type="number" class="form-control" name="Vet" value="{{ Vet }}">
+                <span class="input-group-addon">{{ Vet_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Vorkath</span>
+                <input type="number" class="form-control" name="Vorkath" value="{{ Vorkath }}">
+                <span class="input-group-addon">{{ Vorkath_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Wintertodt</span>
+                <input type="number" class="form-control" name="Wintertodt" value="{{ Wintertodt }}">
+                <span class="input-group-addon">{{ Wintertodt_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Zalcano</span>
+                <input type="number" class="form-control" name="Zalcano" value="{{ Zalcano }}">
+                <span class="input-group-addon">{{ Zalcano_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Zulrah</span>
+                <input type="number" class="form-control" name="Zulrah" value="{{ Zulrah }}">
+                <span class="input-group-addon">{{ Zulrah_output }}</span>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <h1 align="center" class="row">Other pets</h1>
+    </ul>
+    <div class="row">
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">BA - High level gambles</span>
+                <input type="number" class="form-control" name="gambles" value="{{ gambles }}">
+                <span class="input-group-addon">{{ gambles_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Master clues</span>
+                <input type="number" class="form-control" name="master" value="{{ master }}">
+                <span class="input-group-addon">{{ master_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Herbiboars</span>
+                <input type="number" class="form-control" name="Herbiboars" value="{{ Herbiboars }}">
+                <span class="input-group-addon">{{ Herbiboars_output }}</span>
+            </div>
+        </div>
+        <div class="form-group col-xs-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon">Chompys</span>
+                <input type="number" class="form-control" name="Chompys" value="{{ Chompys }}">
+                <span class="input-group-addon">{{ Chompys_output }}</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-warning col-xs-offset-6" name="btn" value="Calc">
+        Calculate
+    </button>
+
+
+</form>
+<br>
+<br>
+
+<div class="panel panel-default container">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Overall pet chances</div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>Number of pets</th>
+            <th>Probability</th>
+        </tr>
+        {% for key, value in overall_probs.items() %}
+           <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }}% </td>
+           </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+<!--<h1 class="col-xs-offset-4">Overall pet chance:{{ overall_pet_chance }}%</h1></-->
+
+
+
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("huntperc");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+
+{% endblock %}

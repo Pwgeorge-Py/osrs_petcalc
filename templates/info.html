@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Pet calc:</h1>
+<h3>Assumptions:</h3>
+<br>
+<p>Skilling order assumptions:</p>
+<p>WC stages = Tree -> Oak -> Willow -> Teak</p>
+<p>Fish stages (xp averaged for all stages as multi fish possible) Shrimp/Anch -> trout/salmon -> Barb fishing</p>
+<p>Mining stages = Tin/Copper -> Iron -> MotherLode mine (Xp field is averaged (60 base + 17 avg))</p>
+<p>Agil stages = Gnome -> Varrock -> Canifis -> Wilderness -> Seers -> Rellekka -> Ardougne</p>
+<p>Thieving stages = Man -> Cake stalls -> Fruit stalls -> Knights of Ardougne</p>
+<p>Farming stages = Allotments (xp avg) -> Oak -> Apple -> Curry -> Pineapple -> Papaya -> Palm</p>
+<p>RC stages = ZMI -> Blood -> Soul</p>
+<p>Hunt stages = Grey -> Red</p>
+<br>
+<br>
+<p>Boss Assumptions:</p>
+<p>Jad kills are ON task</p>
+<p>Zuk kills are OFF task</p>
+<p>Nightmare - You get MVP 1/5 times</p>
+<p>ToB - Assumes optimal performance</p>
+<p>CoX - Assumes 32k points per trip</p>
+<br>
+<br>
+<p>Overall pet chances:</p>
+<p>Results are based on a simulation of 10,000 trials</p>
+<p>This may cause small inaccuracies when compared to actual probabilities</p>
+{% endblock %}
